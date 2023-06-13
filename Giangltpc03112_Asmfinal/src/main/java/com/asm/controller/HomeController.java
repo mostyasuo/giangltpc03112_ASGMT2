@@ -108,6 +108,7 @@ public class HomeController {
 						session.set("userAdmin", "admin");
 					}
 					model.addAttribute("message", "Login success");
+					return "redirect:/";
 //				}
 			}
 		} catch (Exception e) {
