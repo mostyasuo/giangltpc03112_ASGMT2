@@ -33,28 +33,30 @@ public class HomeController {
 	AccountService aService;
 	@Autowired 
 	MailerService mailer;
-
+	// Đoạn code này xử lý yêu cầu "/admin"
 	@RequestMapping("/admin")
 	public String admin() {
 		return "admin/index";
 	}
-
+	// Đoạn code này xử lý yêu cầu "/"
+		
 	@RequestMapping("/")
 	public String home(Model model) {
 		// load ds product xep theo ngay tao
 		model.addAttribute("db", pService.findProductByCreateDateDESC());
 		return "home/index";
 	}
-
+	// Đoạn code này xử lý yêu cầu "/brand/list"
 	@GetMapping("/brand/list")
 	public String brandList(Model model) {
 		return "brand/list";
 	}
-
+	// Đoạn code này xử lý yêu cầu "/register" (GET)
 	@GetMapping("/register")
 	public String register(	@ModelAttribute Account account) {
 		return "register";
 	}
+	// Đoạn code này xử lý yêu cầu "/register" (POST)
 	@PostMapping("/register")
 	public String signup(Model model,
 			@ModelAttribute Account account) {
@@ -77,6 +79,7 @@ public class HomeController {
 			return "redirect:/register/success";
 		}
 	}
+	// Đoạn code này xử lý yêu cầu "/register/success"
 	@RequestMapping("/register/success")
 	public String registerSuccess(Model model) {
 		model.addAttribute("message", "Đăng ký thành công");

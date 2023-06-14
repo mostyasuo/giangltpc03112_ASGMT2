@@ -10,13 +10,13 @@
                                 
                                 <ul class="addressFooter">
                                     <li><i class="icon anm anm-map-marker-al"></i>
-                                        <p>Quận 12, TPHCM</p>
+                                        <p>Ninh Kiều , Cần Thơ</p>
                                     </li>
                                     <li class="phone"><i class="icon anm anm-phone-l"></i>
-                                        <p>028 3526 8799</p>
+                                        <p>0962172357</p>
                                     </li>
                                     <li class="email"><i class="icon anm anm-envelope-l"></i>
-                                        <p>caodangfpt@fpt.edu.vn</p>
+                                        <p>giangltpc0312@fpt.edu.vn</p>
                                     </li>
                                 </ul>
                                 <div class="footer-social">
