@@ -33,28 +33,30 @@ public class HomeController {
 	AccountService aService;
 	@Autowired 
 	MailerService mailer;
-
+	// Đoạn code này xử lý yêu cầu "/admin"
 	@RequestMapping("/admin")
 	public String admin() {
 		return "admin/index";
 	}
-
+	// Đoạn code này xử lý yêu cầu "/"
+		
 	@RequestMapping("/")
 	public String home(Model model) {
 		// load ds product xep theo ngay tao
 		model.addAttribute("db", pService.findProductByCreateDateDESC());
 		return "home/index";
 	}
-
+	// Đoạn code này xử lý yêu cầu "/brand/list"
 	@GetMapping("/brand/list")
 	public String brandList(Model model) {
 		return "brand/list";
 	}
-
+	// Đoạn code này xử lý yêu cầu "/register" (GET)
 	@GetMapping("/register")
 	public String register(	@ModelAttribute Account account) {
 		return "register";
 	}
+	// Đoạn code này xử lý yêu cầu "/register" (POST)
 	@PostMapping("/register")
 	public String signup(Model model,
 			@ModelAttribute Account account) {
@@ -77,18 +79,19 @@ public class HomeController {
 			return "redirect:/register/success";
 		}
 	}
+	// Đoạn code này xử lý yêu cầu "/register/success"
 	@RequestMapping("/register/success")
 	public String registerSuccess(Model model) {
 		model.addAttribute("message", "Đăng ký thành công");
 		return "login";
 	}
-
+	// Đoạn code này xử lý yêu cầu "/login" (GET)
 	@GetMapping("/login")
 	public String formLogin(Model model, @RequestParam(value = "message", required = false) String message) {
 		model.addAttribute("message", message);
 		return "login";
 	}
-	
+	// Đoạn code này xử lý yêu cầu "/login" (POST)
 	@PostMapping("/login")
 	public String login(@RequestParam("username") String username,
 			@RequestParam("password") String password, 
@@ -108,6 +111,7 @@ public class HomeController {
 						session.set("userAdmin", "admin");
 					}
 					model.addAttribute("message", "Login success");
+					return "redirect:/";
 //				}
 			}
 		} catch (Exception e) {
@@ -116,7 +120,7 @@ public class HomeController {
 		}
 		return "login";
 	}
-
+	// Đoạn code này kiểm tra quyền admin của tài khoản
 	public Boolean checkAdmin(Account account) {
 		for(RoleDetail roleDetail : account.getRoleDetails()) {
 			if(roleDetail.getRole().getRole().equals("staff") || roleDetail.getRole().getRole().equals("director")) {
@@ -125,6 +129,7 @@ public class HomeController {
 		}
 		return false;
 	}
+	// Đoạn code này xử lý yêu cầu "/logout"
 	@RequestMapping("/logout")
 	public String logoutSuccess(Model model) {
 		session.remove("user");
@@ -134,12 +139,12 @@ public class HomeController {
 		model.addAttribute("message", "Đăng xuất thành công");
 		return "login";
 	}
-	
+	// Đoạn code này xử lý yêu cầu "/forgot-password" (GET)
 	@GetMapping("forgot-password")
 	public String forgot() {
 		return "forgot";
 	}
-	
+	// Đoạn code này xử lý yêu cầu "/forgot-password" (POST)
 	@PostMapping("forgot-password")
 	public String forgot(@RequestParam("username") String username, Model model) {
 		try {
