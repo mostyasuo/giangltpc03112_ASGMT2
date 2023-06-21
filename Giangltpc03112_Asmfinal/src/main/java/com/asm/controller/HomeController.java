@@ -124,7 +124,7 @@ public class HomeController {
 	public Boolean checkAdmin(Account account) {
 		for(RoleDetail roleDetail : account.getRoleDetails()) {
 			if(roleDetail.getRole().getRole().equals("staff") || roleDetail.getRole().getRole().equals("director")) {
-				return true;
+				return true;	
 			}
 		}
 		return false;
