@@ -33,6 +33,7 @@ public class Account implements Serializable{
 	@JsonIgnore
 	@OneToMany(mappedBy = "account", fetch = FetchType.EAGER)
 //	@Column(name = "roledetails")
+	// account 
 	private List<RoleDetail> roleDetails;
 	@JsonIgnore
 	@OneToMany(mappedBy = "account")

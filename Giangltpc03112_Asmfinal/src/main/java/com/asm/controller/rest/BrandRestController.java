@@ -25,20 +25,20 @@ import com.asm.service.BrandService;
 import com.asm.service.UploadService;
 
 @RestController
-@CrossOrigin(origins = "*")
+//@CrossOrigin(origins = "*")  chặn truy cập 
 @RequestMapping("/admin/rest/brands")
 public class BrandRestController {
 	@Autowired
 	BrandService bService;
 	@Autowired
 	UploadService uService;
-
+// lấy ds từ list thương hiệu quăng nó lên table
 	@GetMapping("")
-//	@ResponseBody
+//	@ResponseBody   
 	public List<Brand> getAllBrand() {
 		return bService.findAll();
 	}
-
+// lấy id 
 	@GetMapping("/{id}")
 	public ResponseEntity<Brand> getBrand(@PathVariable("id") String id) {
 		if (!bService.existsById(id)) {
@@ -53,7 +53,7 @@ public class BrandRestController {
 		if(keyword != null) {
 			return bService.findByName("%"+keyword+"%");
 		}else {
-			return this.getAllBrand();
+			return this.getAllBrand();	
 		}
 	}
 	@PostMapping("")

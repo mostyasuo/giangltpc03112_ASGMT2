@@ -44,15 +44,13 @@
 	                        	<li><a  class="fw-bold" href="#"> ${sessionScope.user.username }</a></li>
 	                        	<li><a href="/logout">Đăng xuất</a></li>
 	                        	<li><a href="/order/list">Đơn hàng</a></li>
-	                            <li><a href="#">Sản phẩm yêu thích</a></li>
+	                            <li><a href="/admin">Admin</a></li>
 	                    </c:if>
 	                    <c:if test="${empty sessionScope.user }">
-	                            <li><a href="/login">Login</a></li>
+	                            <li><a href="/login">Login</a></li>	
 	                            <li><a href="/register">Tạo tài khoản</a></li>
 	                    </c:if>
-	                    <c:if test="${not empty sessionScope.userAdmin}">
-		                    <li><a href="/admin">Admin</a></li>
-	                    </c:if>
+	               
 	                  </ul>
 				</div>
 			</div>

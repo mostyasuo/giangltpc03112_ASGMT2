@@ -10,13 +10,13 @@
                                 
                                 <ul class="addressFooter">
                                     <li><i class="icon anm anm-map-marker-al"></i>
-                                        <p>Ninh Kiều , Cần Thơ</p>
+                                        <p>Cần Thơ</p>
                                     </li>
                                     <li class="phone"><i class="icon anm anm-phone-l"></i>
-                                        <p>0962172357</p>
+                                        <p>028 3526 8799</p>
                                     </li>
                                     <li class="email"><i class="icon anm anm-envelope-l"></i>
-                                        <p>giangltpc0312@fpt.edu.vn</p>
+                                        <p>caodangfpt@fpt.edu.vn</p>
                                     </li>
                                 </ul>
                                 <div class="footer-social">
